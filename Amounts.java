@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  * @author piotrkowalski
  */
 public class Amounts {
-
+    
     private BigDecimal amount;
     private String amountString;
     private final String[] numbers = {"zero",
@@ -59,6 +59,9 @@ public class Amounts {
                                 "miliony ",
                                 "miliard ",
                                 "miliardy ",
+                                "złoty",
+                                "złote",
+                                "złotych", 
                                 "złoty ",
                                 "złote ",
                                 "złotych ", 
@@ -67,6 +70,12 @@ public class Amounts {
                                 "groszy"};
     
     public String amountToWords(BigDecimal am) {
+        amountString = am.toString();
+        if(amountString.matches("[1-9][0-9]{0-17}?([.,][0-9]{1,2})")) {  // wyrazenie regularne na kwote
+        
+        } else {
+            System.out.println("To nie jest kwota.");
+        }
         return "";
     }
     
